@@ -1,0 +1,196 @@
+:root {
+  --gh-bg: #0d1117;
+  --gh-bg-secondary: #161b22;
+  --gh-bg-tertiary: #21262d;
+  --gh-header-bg: #010409;
+  --gh-border: #30363d;
+  --gh-border-subtle: #21262d;
+  --gh-text: #e6edf3;
+  --gh-text-muted: #7d8590;
+  --gh-text-secondary: #8b949e;
+  --gh-link: #4493f8;
+  --gh-btn-primary: #238636;
+  --gh-btn-primary-hover: #2ea043;
+  --gh-btn-default: #21262d;
+  --gh-btn-default-hover: #30363d;
+  --gh-btn-border: #30363d;
+  --gh-accent: #2f81f7;
+  --gh-danger: #f85149;
+  --gh-purple: #8957e5;
+  --gh-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--gh-font);
+  background-color: var(--gh-bg);
+  color: var(--gh-text);
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--gh-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  color: var(--gh-text);
+  background-color: var(--gh-bg);
+  border: 1px solid var(--gh-border);
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--gh-accent);
+  box-shadow: 0 0 0 3px rgba(47, 129, 247, 0.3);
+}
+
+/* GitHub Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--gh-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Common GitHub Elements */
+.gh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 6px;
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-btn-default);
+  color: var(--gh-text);
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.gh-btn:hover {
+  background-color: var(--gh-btn-default-hover);
+  border-color: #8b949e;
+  text-decoration: none;
+}
+
+.gh-btn-primary {
+  background-color: var(--gh-btn-primary);
+  border-color: rgba(240, 246, 252, 0.1);
+  color: #ffffff;
+}
+
+.gh-btn-primary:hover {
+  background-color: var(--gh-btn-primary-hover);
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+.gh-btn-danger {
+  color: var(--gh-danger);
+  border-color: var(--gh-border);
+  background-color: var(--gh-bg-secondary);
+}
+
+.gh-btn-danger:hover {
+  background-color: #b62324;
+  color: #fff;
+  border-color: transparent;
+}
+
+.gh-btn-sm {
+  padding: 3px 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.gh-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 24px;
+  border: 1px solid var(--gh-border);
+  color: var(--gh-text-muted);
+}
+
+.gh-badge.public {
+  color: var(--gh-text-secondary);
+}
+
+.gh-badge.private {
+  border-color: #9e6a03;
+  color: #d29922;
+}
+
+/* Header layout */
+.gh-header {
+  height: 62px;
+  background-color: var(--gh-header-bg);
+  border-bottom: 1px solid var(--gh-border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Modal Backdrop */
+.gh-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.gh-modal {
+  background: var(--gh-bg-secondary);
+  border: 1px solid var(--gh-border);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+}
